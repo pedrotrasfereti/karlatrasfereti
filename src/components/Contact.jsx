@@ -40,7 +40,11 @@ function Contact() {
         w="full"
         backgroundImage={`url(${ContactImage})`}
         backgroundSize="cover"
-        backgroundPosition="center"
+        backgroundPosition={{
+          base: 'top 100% right 0px',
+          lg: 'top 70% right 0px',
+          xl: 'top 66% right 0px',
+        }}
         backgroundRepeat="no-repeat"
       />
 
@@ -50,7 +54,7 @@ function Contact() {
         as="form"
         bg={formBgColor}
         position="absolute"
-        top="50%"
+        top={{ base: '50%', lg: '60%' }}
         left="50%"
         transform="translate(-50%, -50%)"
         zIndex="10"
