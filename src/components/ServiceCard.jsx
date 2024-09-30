@@ -33,7 +33,9 @@ function ServiceCard({ title, price }) {
 
       <Text>R${price}</Text>
 
-      <Button variant="cta">Reserve Agora</Button>
+      <Button variant="cta" isDisabled>
+        Em breve pelo site!
+      </Button>
     </Box>
   );
 }
