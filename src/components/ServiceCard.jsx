@@ -1,6 +1,6 @@
 import { Box, Button, Divider, Heading, Text } from '@chakra-ui/react';
 
-function ServiceCard({ title, price }) {
+function ServiceCard({ title, price = undefined }) {
   return (
     <Box
       as="article"
@@ -31,7 +31,7 @@ function ServiceCard({ title, price }) {
         mx="auto"
       />
 
-      <Text>R${price}</Text>
+      {price && <Text>R${price}</Text>}
 
       <Button variant="cta" isDisabled>
         Em breve pelo site!

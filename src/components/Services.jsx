@@ -33,9 +33,9 @@ function Services() {
           w="full"
           gap={{ base: 12, md: 0, lg: 12 }}
         >
-          <ServiceCard title="Consultorias em fazendas" price="25" />
-          <ServiceCard title="Consultas a domicílio" price="25" />
-          <ServiceCard title="Formulação nutricional animal" price="25" />
+          <ServiceCard title="Consultorias em fazendas" />
+          <ServiceCard title="Consultas a domicílio" />
+          <ServiceCard title="Formulação nutricional animal" />
         </Flex>
       </VStack>
     </Container>
