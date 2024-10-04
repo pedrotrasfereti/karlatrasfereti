@@ -53,7 +53,9 @@ function Contact() {
         `,
       };
 
-      await sendEmail(message);
+      const result = await sendEmail(message);
+
+      console.log('result:', result);
 
       toast({
         title: 'Email enviado!',
