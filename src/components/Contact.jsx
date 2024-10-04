@@ -166,7 +166,9 @@ function Contact() {
               />
             </FormControl>
 
-            <Button type="submit" variant="cta">Enviar</Button>
+            <Button type="submit" variant="cta">
+              Enviar
+            </Button>
           </Flex>
         </VStack>
       </Box>

@@ -8,13 +8,13 @@ import prettier from 'eslint-plugin-prettier';
 export default [
   { ignores: ['dist'] },
   {
-    env: {
-      node: true,
-    },
     files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        process: 'readonly',
+      },
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
