@@ -1,6 +1,6 @@
 export const sendEmail = async (emailData) => {
   try {
-    const response = await fetch('/api/sendEmail', {
+    const response = await fetch('/functions/sendEmail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
