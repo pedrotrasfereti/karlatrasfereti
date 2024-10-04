@@ -7,13 +7,13 @@ export default async function handler(req, res) {
 
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-  const { subject, text } = req.body;
+  const { subject, html } = req.body;
 
   const msg = {
     to: process.env.SENDGRID_EMAIL_RECIPIENT,
     from: process.env.SENDGRID_EMAIL_SENDER,
     subject,
-    text,
+    html,
   };
 
   try {
