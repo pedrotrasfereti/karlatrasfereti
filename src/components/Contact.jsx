@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   Box,
   Button,
@@ -9,10 +11,13 @@ import {
   Input,
   Textarea,
   useColorModeValue,
+  useToast,
   VStack,
 } from '@chakra-ui/react';
 
 import ContactImage from '../assets/contact.jpeg';
+
+import { sendEmail } from '../services/emailService.js';
 
 function Contact() {
   const bgColor = useColorModeValue(
@@ -24,6 +29,44 @@ function Contact() {
     'surface.light',
     'background.darkSecondary',
   );
+
+  const toast = useToast();
+
+  // Form
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [text, setText] = useState('');
+
+  // API
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const message = {
+        subject: 'PORTFOLIO: Nova Mensagem',
+        html: `
+          <p><strong>Nome:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <br>
+          <br>
+          <p>${text}</p>
+        `,
+      };
+
+      await sendEmail(message);
+
+      toast({
+        title: 'Email enviado!',
+        status: 'success',
+      });
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: 'Um erro ocorreu ao enviar o email!',
+        status: 'error',
+      });
+    }
+  };
 
   return (
     <Container
@@ -63,6 +106,7 @@ function Contact() {
         px={{ base: 9, md: 12 }}
         py={9}
         shadow="lg"
+        onSubmit={handleSubmit}
       >
         <VStack spacing={10}>
           <Heading fontSize={{ base: 22, md: 24 }} fontWeight="normal">
@@ -80,6 +124,8 @@ function Contact() {
                 <FormLabel fontWeight="light">Nome</FormLabel>
 
                 <Input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   variant="flushed"
                   focusBorderColor="brand.700"
                   rounded="0"
@@ -92,6 +138,9 @@ function Contact() {
                 <FormLabel fontWeight="light">Email</FormLabel>
 
                 <Input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  type="email"
                   variant="flushed"
                   mode="dark"
                   focusBorderColor="brand.700"
@@ -106,6 +155,8 @@ function Contact() {
               <FormLabel fontWeight="light">Mensagem</FormLabel>
 
               <Textarea
+                value={text}
+                onChange={(e) => setText(e.target.value)}
                 placeholder="Escreva sua mensagem aqui..."
                 focusBorderColor="brand.700"
                 variant="flushed"
@@ -115,7 +166,7 @@ function Contact() {
               />
             </FormControl>
 
-            <Button variant="cta">Enviar</Button>
+            <Button type="submit" variant="cta">Enviar</Button>
           </Flex>
         </VStack>
       </Box>
