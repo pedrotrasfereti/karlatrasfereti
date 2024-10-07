@@ -45,12 +45,12 @@ function Contact() {
       const message = {
         subject: 'PORTFOLIO: Nova Mensagem',
         html: `
-          <p><strong>Nome:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <br>
-          <br>
-          <p>${text}</p>
-        `,
+            <p><strong>Nome:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <br>
+            <br>
+            <p>${text}</p>
+          `,
       };
 
       await sendEmail(message);
