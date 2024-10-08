@@ -1,6 +1,12 @@
 import { Box, Button, Divider, Heading, Text } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 function ServiceCard({ title, price = undefined }) {
+  const formatForUrl = (str) =>
+    String(str).normalize('NFD').toLowerCase().replaceAll(' ', '-');
+
+  const serviceName = formatForUrl(title);
+
   return (
     <Box
       as="article"
@@ -33,7 +39,9 @@ function ServiceCard({ title, price = undefined }) {
 
       {price && <Text>R${price}</Text>}
 
-      <Button variant="cta">Reserve Agora</Button>
+      <Button variant="cta">
+        <Link to={`/servicos/${serviceName}`}>Reserve Agora</Link>
+      </Button>
     </Box>
   );
 }
