@@ -1,5 +1,5 @@
 import { Button, Container, Flex, Heading, VStack } from '@chakra-ui/react';
-import { FaArrowLeft } from 'react-icons/fa';
+import { BsArrowLeft } from 'react-icons/bs';
 
 import { Link } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ function NotFoundPage() {
           <Heading textAlign="center">Página não encontrada ☹️</Heading>
 
           <Button
-            leftIcon={<FaArrowLeft className="icon" />}
+            leftIcon={<BsArrowLeft className="icon" />}
             _hover={{
               '.icon': {
                 transform: 'translateX(-30%)',
