@@ -7,6 +7,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Skeleton,
 } from '@chakra-ui/react';
 
 import { SearchIcon } from '@chakra-ui/icons';
@@ -57,6 +58,15 @@ function Autocomplete({
       </Button>
     </HStack>
   );
+
+  if (items.length === 0) {
+    return (
+      <HStack gap={2} w="full">
+        <Skeleton height="3rem" w="full" />
+        <Skeleton height="3rem" w="10rem" rounded="full" />
+      </HStack>
+    );
+  }
 
   return (
     <Box px={8} py={4} w="full">
