@@ -37,10 +37,12 @@ function ServiceCard({ title, price = undefined }) {
         mx="auto"
       />
 
-      {price && <Text>R${price}</Text>}
+      {price && <Text>A partir de R${price}</Text>}
 
       <Button variant="cta">
-        <Link to={`/servicos/${serviceName}`}>Reserve Agora</Link>
+        <Link to={`/servicos/${serviceName}`} state={{ title }}>
+          Reserve Agora
+        </Link>
       </Button>
     </Box>
   );
