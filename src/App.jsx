@@ -16,7 +16,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/servicos/:serviceName" element={<BookingPage />} />
+        <Route path="/servicos/:id" element={<BookingPage />} />
         {/* Catch-all route for 404 Not Found page */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
