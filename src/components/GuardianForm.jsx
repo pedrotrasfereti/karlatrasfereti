@@ -30,10 +30,8 @@ function GuardianForm({ handleSubmit }) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             name="name"
-            variant="flushed"
+            bg="white"
             focusBorderColor="brand.700"
-            rounded="0"
-            size="sm"
           />
         </FormControl>
 
@@ -45,11 +43,9 @@ function GuardianForm({ handleSubmit }) {
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             name="email"
-            variant="flushed"
+            bg="white"
             mode="dark"
             focusBorderColor="brand.700"
-            rounded="0"
-            size="sm"
           />
         </FormControl>
       </Flex>
@@ -65,18 +61,16 @@ function GuardianForm({ handleSubmit }) {
           {() => (
             <Input
               name="phone"
-              variant="flushed"
+              bg="white"
               mode="dark"
               focusBorderColor="brand.700"
-              rounded="0"
-              size="sm"
               w={64}
             />
           )}
         </InputMask>
       </FormControl>
 
-      <Button type="submit" variant="cta" isDisabled={!validForm()}>
+      <Button type="submit" isDisabled={!validForm()}>
         Confirmar
       </Button>
     </Flex>
