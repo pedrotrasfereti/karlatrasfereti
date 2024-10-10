@@ -20,23 +20,43 @@ import {
 import HelpModal from './HelpModal';
 
 const animals = [
-  { value: 'caninos', label: 'Canídeos (cães)' },
-  { value: 'felinos', label: 'Felídeos (gatos)' },
-  { value: 'lagomorfos', label: 'Lagomorfos (coelhos)' },
+  { value: 'domesticos', label: '=== Domésticos ===', disabled: true },
+  { value: 'caninos', label: 'Canídeos (cães)', disabled: false },
+  { value: 'felinos', label: 'Felídeos (gatos)', disabled: false },
+  { value: 'lagomorfos', label: 'Lagomorfos (coelhos)', disabled: false },
   {
     value: 'roedores',
     label: 'Roedores (hamsters, porquinhos-da-índia, chinchilas)',
+    disabled: false,
   },
   {
     value: 'psitacideos',
     label: 'Psitacídeos (periquitos, papagaios, calopsitas)',
+    disabled: false,
   },
-  { value: 'bovinos', label: 'Bovinos (gado de corte e leite)' },
-  { value: 'equinos', label: 'Equinos (cavalos)' },
-  { value: 'suinos', label: 'Suínos (porcos)' },
-  { value: 'caprinos-e-ovinos', label: 'Caprinos e Ovinos (cabras, ovelhas)' },
-  { value: 'bubalinos', label: 'Bubalinos' },
-  { value: 'galiformes', label: 'Aves de produção (galinhas, perus, etc.)' },
+  {
+    value: 'producao',
+    label: '=== Animais de Produção ===',
+    disabled: true,
+  },
+  {
+    value: 'bovinos',
+    label: 'Bovinos (gado de corte e leite)',
+    disabled: false,
+  },
+  { value: 'equinos', label: 'Equinos (cavalos)', disabled: false },
+  { value: 'suinos', label: 'Suínos (porcos)', disabled: false },
+  {
+    value: 'caprinos-e-ovinos',
+    label: 'Caprinos e Ovinos (cabras, ovelhas)',
+    disabled: false,
+  },
+  { value: 'bubalinos', label: 'Bubalinos', disabled: false },
+  {
+    value: 'galiformes',
+    label: 'Aves de produção (galinhas, perus, etc.)',
+    disabled: false,
+  },
 ];
 
 function AnimalForm({ handleSubmit, hideFields = [] }) {
@@ -81,8 +101,8 @@ function AnimalForm({ handleSubmit, hideFields = [] }) {
               Escolha uma opção
             </option>
 
-            {animals.map(({ value, label }, index) => (
-              <option key={index} value={value}>
+            {animals.map(({ value, label, disabled }, index) => (
+              <option key={index} value={value} disabled={disabled}>
                 {label}
               </option>
             ))}
@@ -111,6 +131,7 @@ function AnimalForm({ handleSubmit, hideFields = [] }) {
             <RadioGroup
               value={sex}
               name="sex"
+              defaultValue="f"
               onChange={(value) => setSex(value)}
             >
               <Stack spacing={5} direction="row">
