@@ -74,9 +74,10 @@ function AnimalForm({ handleSubmit, hideFields = [] }) {
             value={animalFamily}
             name="family"
             bg="white"
+            defaultValue=""
             onChange={(e) => setAnimalFamily(e.target.value)}
           >
-            <option value="" disabled selected>
+            <option value="" disabled>
               Escolha uma opção
             </option>
 
