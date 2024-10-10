@@ -8,6 +8,12 @@ import {
 
 import ServiceCard from './ServiceCard';
 
+const serviceItems = [
+  { index: 1, name: 'Consultorias em fazendas', price: '500' },
+  { index: 2, name: 'Consultas a domicílio', price: '100' },
+  { index: 3, name: 'Formulação nutricional animal', price: '300' },
+];
+
 function Services() {
   const bgColor = useColorModeValue(
     'background.lightSecondary',
@@ -33,9 +39,14 @@ function Services() {
           w="full"
           gap={{ base: 12, md: 0, lg: 12 }}
         >
-          <ServiceCard title="Consultorias em fazendas" price="500" />
-          <ServiceCard title="Consultas a domicílio" price="100" />
-          <ServiceCard title="Formulação nutricional animal" price="300" />
+          {serviceItems.map(({ index, name, price }) => (
+            <ServiceCard
+              key={`service-${index}`}
+              index={index}
+              title={name}
+              price={price}
+            />
+          ))}
         </Flex>
       </VStack>
     </Container>
