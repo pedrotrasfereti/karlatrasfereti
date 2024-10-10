@@ -10,11 +10,15 @@ import {
   StepSeparator,
 } from '@chakra-ui/react';
 
-function Stepper({ activeStep, steps }) {
+function Stepper({ activeStep, steps, setActiveStep }) {
+  const handleSetStep = (value) => {
+    if (value < activeStep) setActiveStep(value);
+  };
+
   return (
     <ChakraStepper index={activeStep} w="full" colorScheme="green">
       {steps.map((step, index) => (
-        <Step key={index}>
+        <Step key={index} onClick={() => handleSetStep(index + 1)}>
           <StepIndicator>
             <StepStatus
               complete={<StepIcon />}
