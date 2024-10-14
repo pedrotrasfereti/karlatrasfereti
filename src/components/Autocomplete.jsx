@@ -43,7 +43,7 @@ function Autocomplete({
         </InputLeftElement>
 
         <Input
-          autocomplete="off"
+          autoComplete="off"
           bg="white"
           focusBorderColor="brand.700"
           {...inputProps}
