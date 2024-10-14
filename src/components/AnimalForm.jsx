@@ -83,10 +83,11 @@ function AnimalForm({ handleSubmit, hideFields = [] }) {
       direction="column"
       justifyContent="space-between"
       gap={8}
+      pb={20}
       w="full"
       onSubmit={handleSubmit}
     >
-      <Flex direction={{ base: 'column', md: 'row' }} gap={14}>
+      <Flex direction={{ base: 'column', md: 'row' }} gap={{ base: 7, md: 14 }}>
         <FormControl isRequired>
           <FormLabel fontWeight="light">Categoria</FormLabel>
 
@@ -125,7 +126,7 @@ function AnimalForm({ handleSubmit, hideFields = [] }) {
         </FormControl>
       </Flex>
 
-      <Flex direction={{ base: 'column', md: 'row' }} gap={14}>
+      <Flex direction={{ base: 'column', md: 'row' }} gap={{ base: 7, md: 14 }}>
         {!hideFields.includes('sex') && (
           <FormControl isRequired>
             <FormLabel fontWeight="light">Sexo</FormLabel>
