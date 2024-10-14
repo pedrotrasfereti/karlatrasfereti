@@ -80,7 +80,7 @@ function Autocomplete({
   }
 
   return (
-    <Box px={8} py={4} w="full">
+    <Box px={{ base: 0, md: 8 }} py={4} w="full">
       <CUIAutoComplete
         label={label}
         placeholder={placeholder}
