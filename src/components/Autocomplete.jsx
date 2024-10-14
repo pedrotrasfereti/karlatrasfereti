@@ -3,11 +3,13 @@ import { useState } from 'react';
 import {
   Box,
   Button,
+  Flex,
   HStack,
   Input,
   InputGroup,
   InputLeftElement,
   Skeleton,
+  Text,
 } from '@chakra-ui/react';
 
 import { SearchIcon } from '@chakra-ui/icons';
@@ -45,6 +47,7 @@ function Autocomplete({
         <Input
           autoComplete="off"
           bg="white"
+          color="#1a202c"
           focusBorderColor="brand.700"
           {...inputProps}
         />
@@ -57,6 +60,14 @@ function Autocomplete({
         Confirmar
       </Button>
     </HStack>
+  );
+
+  const renderCustomItem = (selected) => (
+    <Flex flexDir="row" alignItems="center" p={0.5}>
+      <Text color="#1a202c" userSelect="none">
+        {selected.label}
+      </Text>
+    </Flex>
   );
 
   if (items.length === 0) {
@@ -75,6 +86,7 @@ function Autocomplete({
         placeholder={placeholder}
         disableCreateItem={true}
         items={items}
+        itemRenderer={renderCustomItem}
         highlightItemBg="green.50"
         inputStyleProps={inputStyleProps}
         tagStyleProps={{ display: 'none' }}
