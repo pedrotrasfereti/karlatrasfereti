@@ -27,10 +27,11 @@ function GuardianForm({ handleSubmit }) {
       direction="column"
       justifyContent="space-between"
       gap={8}
+      pb={20}
       w="full"
       onSubmit={handleSubmit}
     >
-      <Flex direction={{ base: 'column', md: 'row' }} gap={14}>
+      <Flex direction={{ base: 'column', md: 'row' }} gap={{ base: 7, md: 14 }}>
         <FormControl isRequired>
           <FormLabel fontWeight="light">Nome</FormLabel>
 
@@ -79,7 +80,7 @@ function GuardianForm({ handleSubmit }) {
               color="#1a202c"
               mode="dark"
               focusBorderColor="brand.700"
-              maxW="16.25rem"
+              maxW={{ base: 'full', md: '16.25rem' }}
               placeholder="Telefone para contato"
             />
           )}
