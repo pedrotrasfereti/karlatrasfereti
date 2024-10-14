@@ -198,6 +198,7 @@ function BookingPage() {
             variant="ghost"
             color="brand.500"
             fontWeight="400"
+            rounded="full"
             leftIcon={<BsArrowLeft className="icon" />}
             _hover={{
               '.icon': {
