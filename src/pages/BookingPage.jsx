@@ -187,7 +187,7 @@ function BookingPage() {
 
   return (
     <Container as="main" minW="100%" px={0}>
-      <Flex direction="column" minH="100vh" px={7} gap={14}>
+      <Flex direction="column" minH="100vh" px={7} gap={{ base: 2, md: 14 }}>
         <Flex
           align="center"
           direction={{ base: 'column', md: 'row' }}
