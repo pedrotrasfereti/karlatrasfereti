@@ -19,10 +19,10 @@ import {
   Spinner,
 } from '@chakra-ui/react';
 
-import Autocomplete from '../components/Autocomplete';
-import Stepper from '../components/Stepper';
-import GuardianForm from '../components/GuardianForm';
 import AnimalForm from '../components/AnimalForm';
+import Autocomplete from '../components/Autocomplete';
+import GuardianForm from '../components/GuardianForm';
+import Stepper from '../components/Stepper';
 
 import { BsArrowLeft } from 'react-icons/bs';
 
@@ -187,8 +187,13 @@ function BookingPage() {
 
   return (
     <Container as="main" minW="100%" px={0}>
-      <Flex direction="column" minH="100vh" px={6} gap={14}>
-        <Flex align="center" mt={28}>
+      <Flex direction="column" minH="100vh" px={7} gap={14}>
+        <Flex
+          align="center"
+          direction={{ base: 'column', md: 'row' }}
+          mt={28}
+          gap={{ base: 7, md: 0 }}
+        >
           <Button
             variant="ghost"
             color="brand.500"
@@ -211,7 +216,7 @@ function BookingPage() {
           <Spacer />
         </Flex>
 
-        <VStack spacing={12} alignSelf="center" w="xl">
+        <VStack alignSelf="center" spacing={12} w={{ base: 'full', md: 'xl' }}>
           <Stepper
             activeStep={activeStep}
             steps={getSteps()}
