@@ -39,6 +39,8 @@ function GuardianForm({ handleSubmit }) {
             onChange={(e) => setName(e.target.value)}
             name="name"
             bg="white"
+            color="#1a202c"
+            mode="dark"
             focusBorderColor="brand.700"
             placeholder="Escreva o seu nome"
           />
@@ -53,6 +55,7 @@ function GuardianForm({ handleSubmit }) {
             type="email"
             name="email"
             bg="white"
+            color="#1a202c"
             mode="dark"
             focusBorderColor="brand.700"
             placeholder="E-mail para contato"
@@ -73,6 +76,7 @@ function GuardianForm({ handleSubmit }) {
               name="phone"
               type="tel"
               bg="white"
+              color="#1a202c"
               mode="dark"
               focusBorderColor="brand.700"
               maxW="16.25rem"
