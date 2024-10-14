@@ -94,6 +94,7 @@ function AnimalForm({ handleSubmit, hideFields = [] }) {
             value={animalFamily}
             name="family"
             bg="white"
+            color="#1a202c"
             defaultValue=""
             onChange={(e) => setAnimalFamily(e.target.value)}
           >
@@ -117,6 +118,7 @@ function AnimalForm({ handleSubmit, hideFields = [] }) {
             onChange={(e) => setAnimalName(e.target.value)}
             name="name"
             bg="white"
+            color="#1a202c"
             mode="dark"
             focusBorderColor="brand.700"
           />
@@ -160,7 +162,7 @@ function AnimalForm({ handleSubmit, hideFields = [] }) {
           >
             <NumberInputField
               bg="white"
-              color="black"
+              color="#1a202c"
               onChange={(e) =>
                 setAge(
                   e.target.value > 100
@@ -174,12 +176,12 @@ function AnimalForm({ handleSubmit, hideFields = [] }) {
 
             <NumberInputStepper>
               <NumberIncrementStepper
-                color="black"
+                color="#1a202c"
                 onClick={() => setAge(age >= 99 ? 100 : Number(age) + 1)}
               />
 
               <NumberDecrementStepper
-                color="black"
+                color="#1a202c"
                 onClick={() => setAge(age <= 1 ? 0 : Number(age) - 1)}
               />
             </NumberInputStepper>
@@ -215,14 +217,14 @@ function AnimalForm({ handleSubmit, hideFields = [] }) {
 
                 <NumberInputStepper>
                   <NumberIncrementStepper
-                    color="black"
+                    color="#1a202c"
                     onClick={() =>
                       setWeight(weight >= 79 ? 80 : Number(weight) + 1)
                     }
                   />
 
                   <NumberDecrementStepper
-                    color="black"
+                    color="#1a202c"
                     onClick={() =>
                       setWeight(weight <= 0 ? 0 : Number(weight) - 1)
                     }
