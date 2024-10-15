@@ -15,7 +15,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import {
   ChevronDownIcon,
@@ -28,6 +28,8 @@ import { FaPaw, FaInfo, FaPhoneAlt } from 'react-icons/fa';
 
 function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const location = useLocation();
 
   return (
     <Container
@@ -65,33 +67,35 @@ function Navbar() {
               />
             </InputGroup>
 
-            <Menu>
-              <MenuButton
-                as={Button}
-                rightIcon={<ChevronDownIcon />}
-                icon={<ChevronDownIcon />}
-                pl={6}
-                pr={6}
-                gap={10}
-                maxW="7rem"
-              >
-                Menu
-              </MenuButton>
+            {location.pathname === '/' && (
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  rightIcon={<ChevronDownIcon />}
+                  icon={<ChevronDownIcon />}
+                  pl={6}
+                  pr={6}
+                  gap={10}
+                  maxW="7rem"
+                >
+                  Menu
+                </MenuButton>
 
-              <MenuList as="nav">
-                <MenuItem as="a" href="#sobre" icon={<FaInfo />}>
-                  Sobre Mim
-                </MenuItem>
+                <MenuList as="nav">
+                  <MenuItem as="a" href="#sobre" icon={<FaInfo />}>
+                    Sobre Mim
+                  </MenuItem>
 
-                <MenuItem as="a" href="#servicos" icon={<FaPaw />}>
-                  Serviços
-                </MenuItem>
+                  <MenuItem as="a" href="#servicos" icon={<FaPaw />}>
+                    Serviços
+                  </MenuItem>
 
-                <MenuItem as="a" href="#contato" icon={<FaPhoneAlt />}>
-                  Contato
-                </MenuItem>
-              </MenuList>
-            </Menu>
+                  <MenuItem as="a" href="#contato" icon={<FaPhoneAlt />}>
+                    Contato
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            )}
 
             <IconButton
               onClick={toggleColorMode}
