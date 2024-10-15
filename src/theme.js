@@ -28,11 +28,12 @@ const theme = extendTheme({
   },
   colors: {
     brand: {
+      200: '#9AE6B4',
+      300: '#68D391',
+      400: '#48BB78',
       500: '#016F55',
       600: '#017e61',
       700: '#01b087',
-      800: '#02c79a',
-      900: '#02D4A3',
     },
     background: {
       lightPrimary: '#FCF9E2',
@@ -60,12 +61,12 @@ const theme = extendTheme({
     },
     Heading: {
       baseStyle: (props) => ({
-        color: mode('brand.500', 'brand.900')(props),
+        color: mode('brand.500', 'brand.200')(props),
       }),
     },
     Text: {
       baseStyle: (props) => ({
-        color: mode('brand.500', 'brand.900')(props),
+        color: mode('brand.500', 'brand.200')(props),
         fontSize: '16',
         textAlign: 'justify',
       }),
@@ -77,33 +78,33 @@ const theme = extendTheme({
       },
       variants: {
         solid: (props) => ({
-          backgroundColor: mode('brand.500', 'brand.900')(props),
-          bg: mode('brand.500', 'brand.900')(props),
+          backgroundColor: mode('brand.500', 'brand.300')(props),
+          bg: mode('brand.500', 'brand.300')(props),
           borderRadius: 'full',
           color: mode('white', 'background.darkPrimary')(props),
           textColor: mode('white', 'background.darkPrimary')(props),
           fontWeight: 'normal',
           _hover: {
-            bg: mode('brand.600', 'brand.800')(props),
+            bg: mode('brand.600', 'brand.400')(props),
           },
         }),
         cta: (props) => ({
-          backgroundColor: mode('brand.500', 'brand.900')(props),
-          bg: mode('brand.500', 'brand.900')(props),
+          backgroundColor: mode('brand.500', 'brand.300')(props),
+          bg: mode('brand.500', 'brand.300')(props),
           borderRadius: '1px',
           color: mode('white', 'background.darkPrimary')(props),
           textColor: mode('white', 'background.darkPrimary')(props),
           fontWeight: 'normal',
           _hover: {
-            bg: mode('brand.600', 'brand.800')(props),
+            bg: mode('brand.600', 'brand.400')(props),
           },
         }),
         special: (props) => ({
-          backgroundColor: mode('brand.500', 'brand.900')(props),
-          bg: mode('brand.500', 'brand.900')(props),
+          backgroundColor: mode('brand.500', 'brand.300')(props),
+          bg: mode('brand.500', 'brand.300')(props),
           bgGradient: mode(
             'linear(90deg, brand.500, transparent)',
-            'linear(90deg, brand.900, transparent)',
+            'linear(90deg, brand.300, transparent)',
           )(props),
           borderRadius: 'full',
           color: mode('white', 'background.darkPrimary')(props),
