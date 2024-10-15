@@ -38,8 +38,8 @@ const theme = extendTheme({
     background: {
       lightPrimary: '#FCF9E2',
       lightSecondary: '#cef0fd',
-      darkPrimary: '#03141C',
-      darkSecondary: '#041E2B',
+      darkPrimary: '#041620',
+      darkSecondary: '#05212F',
       selection: '#308280',
     },
     surface: {
