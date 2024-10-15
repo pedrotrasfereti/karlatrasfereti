@@ -13,7 +13,7 @@ import HeroImage from '../assets/hero.jpeg';
 
 function Hero() {
   return (
-    <Container as="section" minW="100%" px={0}>
+    <Container as="section" minW="100%" px={0} zIndex={2}>
       <HStack h="100vh">
         <Flex flex="1" alignItems="center" justifyContent="center">
           <Flex

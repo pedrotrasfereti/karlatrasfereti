@@ -36,6 +36,7 @@ function Navbar() {
       maxW="100%"
       position="absolute"
       px={0}
+      zIndex={10}
     >
       <Flex h={16}>
         <Flex alignItems="center" justifyContent="center" flex="1">
