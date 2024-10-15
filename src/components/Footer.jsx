@@ -50,7 +50,7 @@ function Footer() {
           <Flex align="center" justifyContent="center" w="full">
             <Button
               as="a"
-              href="https://example.com"
+              href="https://www.instagram.com/katrasfer"
               target="_blank"
               rel="noopener noreferrer"
               variant="link"
