@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Container,
   Flex,
   Heading,
@@ -7,6 +8,7 @@ import {
   useColorModeValue,
   VStack,
 } from '@chakra-ui/react';
+import { FaInstagram } from 'react-icons/fa';
 
 function Footer() {
   const bgColor = useColorModeValue(
@@ -44,7 +46,25 @@ function Footer() {
           </VStack>
         </Box>
 
-        <Box flex="2" display={{ base: 'none', lg: 'flex' }} />
+        <Box flex="2" display={{ base: 'none', lg: 'flex' }}>
+          <Flex align="center" justifyContent="center" w="full">
+            <Button
+              as="a"
+              href="https://example.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="link"
+            >
+              <Text fontSize="xl" mr={2}>
+                <FaInstagram />
+              </Text>
+
+              <Text fontSize="lg" fontWeight="normal">
+                Instagram
+              </Text>
+            </Button>
+          </Flex>
+        </Box>
       </Flex>
     </Container>
   );
